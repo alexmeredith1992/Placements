@@ -23,6 +23,42 @@
 			</g:if>
 			<ol class="property-list opportunity">
 			
+				<g:if test="${opportunityInstance?.applications}">
+				<li class="fieldcontain">
+					<span id="applications-label" class="property-label"><g:message code="opportunity.applications.label" default="Applications" /></span>
+					
+						<span class="property-value" aria-labelledby="applications-label"><g:fieldValue bean="${opportunityInstance}" field="applications"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opportunityInstance?.companyName}">
+				<li class="fieldcontain">
+					<span id="companyName-label" class="property-label"><g:message code="opportunity.companyName.label" default="Company Name" /></span>
+					
+						<span class="property-value" aria-labelledby="companyName-label"><g:fieldValue bean="${opportunityInstance}" field="companyName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opportunityInstance?.jobTitle}">
+				<li class="fieldcontain">
+					<span id="jobTitle-label" class="property-label"><g:message code="opportunity.jobTitle.label" default="Job Title" /></span>
+					
+						<span class="property-value" aria-labelledby="jobTitle-label"><g:fieldValue bean="${opportunityInstance}" field="jobTitle"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opportunityInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="opportunity.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${opportunityInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
