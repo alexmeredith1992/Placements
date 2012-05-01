@@ -1,4 +1,4 @@
-<%@ page import="placements.Apply" %>
+<%@ page import="placements.Application" %>
 
 
 
@@ -25,4 +25,14 @@
 	</label>
 	<g:textField name="student" value="${applicationInstance?.student}"/>
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: applicationInstance, field: 'timeStamp', 'error')} ">
+	<label for="timeStamp">
+		<g:message code="application.timeStamp.label" default="Time Stamp" />
+		
+	</label>
+	<g:textField name="timeStamp" value="${applicationInstance?.timeStamp}"/>
+</div>
+
+
 

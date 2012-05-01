@@ -1,10 +1,13 @@
 package placements
 
+import grails.converters.*
 import org.springframework.dao.DataIntegrityViolationException
 
 class OpportunityController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+    
 
     def index() {
         redirect(action: "list", params: params)
@@ -17,6 +20,22 @@ class OpportunityController {
 
     def create() {
         [opportunityInstance: new Opportunity(params)]
+    }
+   
+    def listOpenPlacements() {
+         def Placements = Opportunity.findAllByStatus('OPEN')
+
+          with format {
+       XML ( render placements as XML )
+       JSON ( render placements as JSON )}
+    }
+
+     def listApplicants() {
+         def jobTitle = Opportunity.findByJobTitle(params.OpportunityID)
+
+          with format {
+       XML ( render placements as XML )
+       JSON ( render placements as JSON )}
     }
 
     def save() {
